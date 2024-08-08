@@ -4,7 +4,7 @@ info:
   description: API to create enhanced narrative scripts
   version: v1.0.0
 servers:
-  - url: https://my-flask-app.herokuapp.com
+  - url: http://127.0.0.1:5000
 paths:
   /createScript:
     post:

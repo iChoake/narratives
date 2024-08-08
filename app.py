@@ -10,7 +10,6 @@ class CreateScript(Resource):
         if not data:
             return {"message": "Invalid request"}, 400
 
-        # Process the data (this is where your script creation logic will go)
         script_id = "12345"  # Placeholder for created script ID
         title = data.get("title")
 
