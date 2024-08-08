@@ -1,1 +1,88 @@
-
+openapi: 3.1.0
+info:
+  title: Narratives
+  description: API to create enhanced narrative scripts
+  version: v1.0.0
+servers:
+  - url: https://my-flask-app.herokuapp.com
+paths:
+  /createScript:
+    post:
+      summary: Create Enhanced Narrative Script
+      description: Endpoint to create a new enhanced narrative script
+      operationId: createEnhancedNarrativeScript
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/NarrativeScript'
+      responses:
+        200:
+          description: Script created successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NarrativeScriptResponse'
+components:
+  schemas:
+    NarrativeScript:
+      type: object
+      properties:
+        title:
+          type: string
+          description: Title of the narrative script
+        openingScene:
+          type: object
+          properties:
+            visual:
+              type: string
+              description: Description of the opening visual
+            textOnScreen:
+              type: string
+              description: Text to be displayed on screen
+            imagePrompt:
+              type: string
+              description: Detailed image prompt describing the scene with all necessary elements and emojis
+          required:
+            - visual
+            - textOnScreen
+            - imagePrompt
+        narrativeSections:
+          type: array
+          items:
+            type: object
+            properties:
+              origin story:
+                type: string
+                description: Detailed and Description Narrative Style informative Personal/or other's origin/Backstory story
+              textOnScreen:
+                type: string
+                description: Text to be displayed on screen
+              imagePrompt:
+                type: string
+                description: Detailed image prompt describing the scene with all necessary elements and emojis
+            required:
+              - origin story
+              - textOnScreen
+              - imagePrompt
+      required:
+        - title
+        - openingScene
+        - narrativeSections
+    NarrativeScriptResponse:
+      type: object
+      properties:
+        id:
+          type: string
+          description: ID of the created script
+        title:
+          type: string
+          description: Title of the narrative script
+        message:
+          type: string
+          description: Confirmation message
+      required:
+        - id
+        - title
+        - message

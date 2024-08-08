@@ -1,0 +1,12 @@
+// {
+//   "python.pythonPath": "/Users/steven/miniconda3/envs/flask/bin/python",
+//   "terminal.integrated.env.osx": {
+//     "CONDA_DEFAULT_ENV": "flask",
+//     "CONDA_PREFIX": "/Users/steven/miniconda3/envs/flask",
+//     "CONDA_PROMPT_MODIFIER": "(flask) ",
+//     "PATH": "/Users/steven/miniconda3/envs/flask/bin:${env:PATH}"
+//   },
+//   "terminal.integrated.shellArgs.osx": [
+//     "--rcfile", "/Users/steven/Documents/flask/narratives/.vscode/conda_init.sh"
+//   ]
+// }
